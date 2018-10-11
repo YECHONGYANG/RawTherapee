@@ -34,6 +34,7 @@ set(NONCLISOURCEFILES
     colorappearance.cc
     coloredbar.cc
     colortoning.cc
+    colorwheel.cc
     coordinateadjuster.cc
     crop.cc
     crophandler.cc

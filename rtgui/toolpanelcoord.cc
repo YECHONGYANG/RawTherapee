@@ -66,6 +66,7 @@ ToolPanelCoordinator::ToolPanelCoordinator (bool batch) : ipc (nullptr), hasChan
     perspective         = Gtk::manage (new PerspCorrection ());
     cacorrection        = Gtk::manage (new CACorrection ());
     chmixer             = Gtk::manage (new ChMixer ());
+    colorwheel          = Gtk::manage (new ColorWheel ());
     blackwhite          = Gtk::manage (new BlackWhite ());
     resize              = Gtk::manage (new Resize ());
     prsharpening        = Gtk::manage (new PrSharpening());
@@ -104,6 +105,7 @@ ToolPanelCoordinator::ToolPanelCoordinator (bool batch) : ipc (nullptr), hasChan
     addPanel (exposurePanel, toneCurve);
     addPanel (colorPanel, vibrance);
     addPanel (colorPanel, chmixer);
+    addPanel (colorPanel, colorwheel);
     addPanel (colorPanel, blackwhite);
     addPanel (exposurePanel, shadowshighlights);
     addPanel (detailsPanel, sharpening);

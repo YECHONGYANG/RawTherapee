@@ -43,6 +43,7 @@
 #include "icmpanel.h"
 #include "resize.h"
 #include "chmixer.h"
+#include "colorwheel.h"
 #include "blackwhite.h"
 #include "cacorrection.h"
 #include "lensprofile.h"
@@ -114,6 +115,7 @@ protected:
     ColorAppearance* colorappearance;
     Vibrance* vibrance;
     ChMixer* chmixer;
+    ColorWheel* colorwheel;
     BlackWhite* blackwhite;
     Resize* resize;
     PrSharpening* prsharpening;

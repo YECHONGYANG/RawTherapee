@@ -2264,6 +2264,8 @@ void ImProcFunctions::rgbProc (Imagefloat* working, LabImage* lab, PipetteBuffer
     float chMixBR = float (params->chmixer.blue[0])/10.f;
     float chMixBG = float (params->chmixer.blue[1])/10.f;
     float chMixBB = float (params->chmixer.blue[2])/10.f;
+	
+	float 
 
     bool blackwhite = params->blackwhite.enabled;
     bool complem = params->blackwhite.enabledcc;
@@ -2426,6 +2428,24 @@ void ImProcFunctions::rgbProc (Imagefloat* working, LabImage* lab, PipetteBuffer
                         }
                     }
                 }
+				
+				/*if (colorwheel) {
+					for (int i = istart, ti = 0; i < tH; i++, ti++) {
+                        for (int j = jstart, tj = 0; j < tW; j++, tj++) {
+							float r = rtemp[ti * TS + tj];
+                            float g = gtemp[ti * TS + tj];
+                            float b = btemp[ti * TS + tj];
+							
+							float rmix = (r * chMixRR + g * chMixRG + b * chMixRB) / 100.f;
+                            float gmix = (r * chMixGR + g * chMixGG + b * chMixGB) / 100.f;
+                            float bmix = (r * chMixBR + g * chMixBG + b * chMixBB) / 100.f;
+							
+							rtemp[ti * TS + tj] = rmix;
+                            gtemp[ti * TS + tj] = gmix;
+                            btemp[ti * TS + tj] = bmix;
+						}
+					}					
+				}*/
 
                 highlightToneCurve(hltonecurve, rtemp, gtemp, btemp, istart, tH, jstart, tW, TS, exp_scale, comp, hlrange);
                 shadowToneCurve(shtonecurve, rtemp, gtemp, btemp, istart, tH, jstart, tW, TS);
